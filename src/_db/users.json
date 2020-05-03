@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "0",
+      "name": "Michał",
+      "user": "michal@test.com",
+      "avatar": "https://avatarfiles.alphacoders.com/215/215753.jpg"
+    },
+    {
+      "id": "1",
+      "name": "Howard The Duck",
+      "user": "howardtheduck@test.com",
+      "avatar": "https://cdnb.artstation.com/p/assets/images/images/015/310/903/large/eric-neill-howard-drink.jpg?1547879759"
+    }
+  ]
+}
