@@ -1,13 +1,15 @@
 import { buildSchema } from 'graphql';
+import { fileLoader, mergeTypes } from 'merge-graphql-schemas';
 
 // TODO fix absolute imports from baseUrl
-import { USER_QUERY, USER_SCHEMA } from '../../modules/user';
+import { getPath } from '../../common/utils';
 
-// TODO better way to generate and split schema
-export const schema = buildSchema(`
-  type Query {
-    ${USER_QUERY}
+const typesArray = fileLoader<string | Record<string, Function>>(
+  getPath('../../modules'),
+  {
+    recursive: true,
   }
+);
+const mergedSchema = mergeTypes(typesArray);
 
-  ${USER_SCHEMA}
-`);
+export const schema = buildSchema(mergedSchema);

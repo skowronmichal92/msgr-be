@@ -15,7 +15,7 @@ yarn
 Run server
 
 ```sh
-yarn server
+yarn start
 ```
 
 Server will be available under http://localhost:9000/graphql url address.

@@ -1,5 +1,5 @@
-import { userResolver } from '../../modules/user';
+import { user } from '../../modules/user';
 
-export const root = {
-  user: userResolver,
+export const resolvers = {
+  user,
 };

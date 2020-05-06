@@ -2,7 +2,7 @@ import cors from 'cors';
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
 
-import { root } from './resolvers';
+import { resolvers } from './resolvers';
 import { schema } from './schema';
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(
   '/graphql',
   graphqlHTTP({
     schema: schema,
-    rootValue: root,
+    rootValue: resolvers,
     graphiql: true,
   })
 );
