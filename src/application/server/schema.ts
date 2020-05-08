@@ -1,4 +1,3 @@
-import { buildSchema } from 'graphql';
 import { fileLoader, mergeTypes } from 'merge-graphql-schemas';
 
 // TODO fix absolute imports from baseUrl
@@ -10,6 +9,5 @@ const typesArray = fileLoader<string | Record<string, Function>>(
     recursive: true,
   }
 );
-const mergedSchema = mergeTypes(typesArray);
 
-export const schema = buildSchema(mergedSchema);
+export const schema = mergeTypes(typesArray);

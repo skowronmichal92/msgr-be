@@ -5,7 +5,7 @@ import { ERRORS } from '../../application/errors';
 
 import { IUserInput, IUser } from './types';
 
-export const user = ({ id }: IUserInput): IUser => {
+export const user = (_: any, { id }: IUserInput): IUser => {
   const requestedUser = users.find(({ id: userId }) => userId === id);
 
   if (!requestedUser) {
