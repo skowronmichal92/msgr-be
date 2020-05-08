@@ -13,6 +13,7 @@
     "@types/node": "^13.13.4",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
+    "apollo-server": "^2.13.0",
     "cors": "^2.8.5",
     "eslint": "^6.8.0",
     "eslint-import-resolver-typescript": "^2.0.0",
@@ -29,6 +30,8 @@
   },
   "scripts": {
     "start": "nodemon src/application/server/index.ts",
+    "kill:id": "netstat -ano | findstr :9000",
+    "kill": "taskkill /pid",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "prettify": "prettier --check --write .",
     "typescript": "tsc"

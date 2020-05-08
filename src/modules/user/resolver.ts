@@ -1,4 +1,7 @@
+import { ApolloError } from 'apollo-server';
+
 import { users } from '../../_db';
+import { ERRORS } from '../../application/errors';
 
 import { IUserInput, IUser } from './types';
 
@@ -6,7 +9,8 @@ export const user = ({ id }: IUserInput): IUser => {
   const requestedUser = users.find(({ id: userId }) => userId === id);
 
   if (!requestedUser) {
-    throw new Error(`No user found with id ${id}`);
+    const { message, code } = ERRORS.NO_USER_ID;
+    throw new ApolloError(message, code, { message });
   }
 
   return requestedUser;
