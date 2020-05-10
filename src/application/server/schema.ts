@@ -4,7 +4,7 @@ import { fileLoader, mergeTypes } from 'merge-graphql-schemas';
 import { getPath } from '../../common/utils';
 
 const typesArray = fileLoader<string | Record<string, Function>>(
-  getPath('../../modules'),
+  getPath('../../../src'),
   {
     recursive: true,
   }

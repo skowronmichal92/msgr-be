@@ -1,0 +1,17 @@
+schema: 'src/application/server/schema.ts'
+documents: null
+require:
+  - ts-node/register/transpile-only
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+  afterOneFileWrite:
+    - prettier --write
+overwrite: true
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - add: "/**\n * THIS IS A GENERATED FILE, DO NOT MODIFY DIRECTLY\n */\n"
+      - 'typescript'
+watch:
+  - ['src/**/*.gql']

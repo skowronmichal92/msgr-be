@@ -3,13 +3,12 @@ import { ApolloError } from 'apollo-server';
 import { users } from '../../_db';
 import { ERRORS } from '../../application/errors';
 import { ResolverFunction } from '../../common/types';
+import { User, QueryUserArgs } from '../../generated/graphql';
 
-import { IUserInput, IUser } from './types';
-
-export const user: ResolverFunction<IUserInput, undefined> = (
+export const user: ResolverFunction<QueryUserArgs, undefined> = (
   _,
   { id }
-): IUser => {
+): User => {
   const requestedUser = users.find(({ id: userId }) => userId === id);
 
   if (!requestedUser) {

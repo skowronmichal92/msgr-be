@@ -24,5 +24,6 @@
     "typeRoots": ["./src/@types"]
   },
   "files": ["./src/@types/graphql.d.ts"],
-  "include": ["./src"]
+  "include": ["./src"],
+  "exclude": ["./src/generated"]
 }
