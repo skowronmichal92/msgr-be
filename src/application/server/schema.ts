@@ -1,10 +1,10 @@
 import { fileLoader, mergeTypes } from 'merge-graphql-schemas';
 
 // TODO fix absolute imports from baseUrl
-import { getPath } from '../../common/utils';
+import { getFilePath } from '../../common/utils';
 
 const typesArray = fileLoader<string | Record<string, Function>>(
-  getPath('../../../src'),
+  getFilePath('../../../src'),
   {
     recursive: true,
   }

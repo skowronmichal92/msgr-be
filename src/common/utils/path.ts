@@ -1,4 +1,4 @@
 import path from 'path';
 
-export const getPath = (pathRoute: string): string =>
+export const getFilePath = (pathRoute: string): string =>
   path.join(__dirname, ...pathRoute.split('/'));
