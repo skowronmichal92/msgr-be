@@ -21,7 +21,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "typeRoots": ["./src/@types"]
+    "typeRoots": ["./src/@types", "node_modules/@types"]
   },
   "files": ["./src/@types/graphql.d.ts"],
   "include": ["./src"],
